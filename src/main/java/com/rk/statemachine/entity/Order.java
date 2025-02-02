@@ -1,6 +1,7 @@
 package com.rk.statemachine.entity;
 
 
+import com.rk.statemachine.enums.OrderState;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -22,5 +23,13 @@ public class Order {
     private Long id;
 
     private Date datetime;
+
+    @Column(name = "user_id")
+    private String userId;
+
+    @Enumerated(EnumType.STRING)
+    @Column(name = "order_state")
+    private OrderState orderState;
+
 
 }
